@@ -1,27 +1,53 @@
 import React from 'react';
 import SectionTitle from '../components/SectionTitle';
-import { Wrench, Hammer, Truck, Users, HardHat, Zap, Briefcase, Shield } from 'lucide-react';
+import { 
+  Wrench, 
+  Hammer, 
+  Truck, 
+  Users, 
+  HardHat, 
+  Zap, 
+  Briefcase, 
+  Shield, 
+  UserCog,
+  Settings,
+  Package,
+  Building,
+  Calculator,
+  Coffee,
+  UserCheck,
+  FileText,
+  Car,
+  Bus
+} from 'lucide-react';
 import ServiceCard from '../components/ServiceCard';
 
 const Services: React.FC = () => {
   const skilledServices = [
-    { title: "Electricians", desc: "Industrial and residential wiring experts.", Icon: Zap },
-    { title: "Plumbers", desc: "Pipe fitting, maintenance, and installation.", Icon: Wrench },
-    { title: "Welders", desc: "TIG, MIG, and Arc welding specialists.", Icon: Hammer },
-    { title: "Carpenters", desc: "Furniture, shuttering, and structural woodwork.", Icon: Hammer }, // Using Hammer as fallback for tools
-    { title: "Mechanics", desc: "Diesel and petrol engine maintenance.", Icon: Wrench },
+    { title: "Electricians", desc: "Licensed electricians with experience in residential, commercial, and industrial electrical installations and maintenance.", Icon: Zap },
+    { title: "Plumbers", desc: "Skilled plumbers proficient in pipeline installation, repair, and maintenance for all types of buildings.", Icon: Wrench },
+    { title: "Welders", desc: "Certified welders experienced in various welding techniques for construction, manufacturing, and industrial projects.", Icon: Hammer },
+    { title: "Carpenters", desc: "Expert carpenters for furniture making, interior work, formwork, and all types of woodworking projects.", Icon: Settings },
+    { title: "Mechanics", desc: "Skilled mechanics for vehicle maintenance, machinery repair, and industrial equipment servicing.", Icon: UserCog },
+    { title: "Technicians", desc: "Qualified technicians for HVAC, maintenance, electronics, and various technical support roles.", Icon: Settings }
   ];
 
   const unskilledServices = [
-    { title: "General Labor", desc: "Construction site helpers and manual handling.", Icon: HardHat },
-    { title: "Warehouse Staff", desc: "Loading, unloading, and inventory management.", Icon: Briefcase },
-    { title: "Cleaners", desc: "Industrial and commercial cleaning staff.", Icon: Users },
+    { title: "General Helpers", desc: "Reliable helpers for construction sites, warehouses, factories, and general support work.", Icon: HardHat },
+    { title: "Construction Laborers", desc: "Strong and experienced laborers for all types of construction and building projects.", Icon: Hammer },
+    { title: "Cleaners", desc: "Professional cleaning staff for offices, hotels, hospitals, and industrial facilities.", Icon: Users },
+    { title: "Packers", desc: "Efficient packers for manufacturing, logistics, and distribution operations.", Icon: Package },
+    { title: "Warehouse Workers", desc: "Experienced workers for inventory management, loading, unloading, and warehouse operations.", Icon: Building },
+    { title: "Factory Workers", desc: "Dedicated workers for production lines, assembly, and various factory operations.", Icon: Settings }
   ];
 
   const professionalServices = [
-    { title: "Drivers", desc: "LTV and HTV licensed drivers.", Icon: Truck },
-    { title: "Security Guards", desc: "Trained personnel for asset protection.", Icon: Shield },
-    { title: "Engineers", desc: "Civil, Mechanical, and Electrical engineers.", Icon: Briefcase },
+    { title: "Engineers", desc: "Civil, mechanical, electrical, and industrial engineers for technical and management positions.", Icon: UserCheck },
+    { title: "Drivers", desc: "Licensed drivers for heavy vehicles, delivery trucks, and personal transportation.", Icon: Truck },
+    { title: "Accountants", desc: "Qualified accountants and bookkeepers for financial management and reporting.", Icon: Calculator },
+    { title: "Hospitality Staff", desc: "Trained staff for hotels, restaurants, cafes, and hospitality services.", Icon: Coffee },
+    { title: "Security Guards", desc: "Professional security personnel for residential, commercial, and industrial facilities.", Icon: Shield },
+    { title: "Office Staff", desc: "Administrative assistants, receptionists, and general office support staff.", Icon: FileText }
   ];
 
   return (
@@ -35,25 +61,37 @@ const Services: React.FC = () => {
 
       <div className="container mx-auto px-4 md:px-6">
         
-        {/* Skilled Section */}
+        {/* Skilled Workers Section */}
         <div className="mb-16">
-          <SectionTitle title="Skilled Manpower" subtitle="Technically trained professionals ready for deployment." />
+          <SectionTitle 
+            title="Skilled Workers" 
+            subtitle="Trained professionals with expertise in various technical fields" 
+            center
+          />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skilledServices.map((s, i) => <ServiceCard key={i} title={s.title} description={s.desc} Icon={s.Icon} />)}
           </div>
         </div>
 
-        {/* Unskilled Section */}
+        {/* Unskilled Workers Section */}
         <div className="mb-16">
-          <SectionTitle title="Unskilled & Semi-Skilled" subtitle="Hardworking labor for construction, factories, and logistics." />
+          <SectionTitle 
+            title="Unskilled Workers" 
+            subtitle="Hardworking laborers ready to support your operations" 
+            center
+          />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {unskilledServices.map((s, i) => <ServiceCard key={i} title={s.title} description={s.desc} Icon={s.Icon} />)}
           </div>
         </div>
 
-        {/* Professional Section */}
+        {/* Professional Staff Section */}
         <div>
-          <SectionTitle title="Professional Staff" subtitle="Qualified experts for specialized roles." />
+          <SectionTitle 
+            title="Professional Staff" 
+            subtitle="Qualified professionals for specialized roles" 
+            center
+          />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {professionalServices.map((s, i) => <ServiceCard key={i} title={s.title} description={s.desc} Icon={s.Icon} />)}
           </div>

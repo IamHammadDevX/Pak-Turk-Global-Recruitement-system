@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { CheckCircle, ArrowRight, Users, HardHat, Globe } from 'lucide-react';
+import { CheckCircle, ArrowRight, Users, HardHat, Globe, Clock, Shield, Award, TrendingUp } from 'lucide-react';
 import SectionTitle from '../components/SectionTitle';
 import ServiceCard from '../components/ServiceCard';
+import TestimonialSlider from '../components/TestimonialSlider';
 import { COMPANY_INFO } from '../constants';
 
 const Home: React.FC = () => {
@@ -56,15 +57,18 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-4 md:px-6">
           <SectionTitle 
             title="Why Choose Pakistani Workers?" 
-            subtitle="Pakistani workers are renowned worldwide for their hard work, adaptability, and technical skills."
+            subtitle="Experienced, hardworking, and dedicated professionals ready to contribute to your business success"
             center
           />
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             {[
-              { title: "Highly Skilled", desc: "Trained professionals in construction, engineering, and technical fields.", icon: HardHat },
-              { title: "Cost Effective", desc: "Competitive wage expectations without compromising on work quality.", icon: Users },
-              { title: "Cultural Adaptability", desc: "Respectful, disciplined workforce that integrates well into Turkish culture.", icon: Globe },
+              { title: "Verified & Skilled", desc: "All workers are professionally trained, certified, and background-verified for quality assurance", icon: HardHat },
+              { title: "Cost-Effective", desc: "Competitive rates without compromising on quality, helping you optimize operational costs", icon: Users },
+              { title: "Quick Deployment", desc: "Fast recruitment and deployment process to meet your urgent manpower requirements", icon: Globe },
+              { title: "Legal Compliance", desc: "Complete documentation, work permits, and legal compliance handled professionally", icon: CheckCircle },
+              { title: "Cultural Adaptability", desc: "Workers experienced in international environments, ready to adapt to Turkish workplace culture", icon: Globe },
+              { title: "24/7 Support", desc: "Continuous support and assistance throughout the entire recruitment and employment period", icon: Users },
             ].map((item, index) => (
               <div key={index} className="text-center p-8 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl transition-all border border-slate-100">
                 <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-pakGreen/10 text-pakGreen mb-6">
@@ -113,6 +117,49 @@ const Home: React.FC = () => {
                 Learn More About Us <ArrowRight size={20} className="ml-2" />
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Track Record */}
+      <section className="py-20 bg-slate-900 text-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <SectionTitle 
+            title="Our Track Record" 
+            subtitle="Numbers that speak for our excellence and reliability"
+            center
+            className="text-white"
+          />
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12">
+            {[
+              { number: "500+", label: "Workers Deployed", icon: Users },
+              { number: "50+", label: "Turkish Companies Served", icon: Award },
+              { number: "98%", label: "Client Satisfaction", icon: TrendingUp },
+              { number: "5+", label: "Years Experience", icon: Clock },
+            ].map((stat, index) => (
+              <div key={index} className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 hover:bg-white/20 transition-all">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-turkRed/20 text-turkRed mb-4">
+                  <stat.icon size={32} />
+                </div>
+                <div className="text-4xl md:text-5xl font-extrabold text-white mb-2">{stat.number}</div>
+                <div className="text-slate-300 font-medium">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 bg-slate-50">
+        <div className="container mx-auto px-4 md:px-6">
+          <SectionTitle 
+            title="What Our Workers Say" 
+            subtitle="Hear from Pakistani and Turkish workers who found opportunities through PAK TURK GLOBAL"
+            center
+          />
+          <div className="mt-12">
+            <TestimonialSlider />
           </div>
         </div>
       </section>
